@@ -241,7 +241,14 @@ function getModelYears(arr) {
 */
 function getOlderCars(arr, num) {
   /* code here */
+    let OlderCars = [];
+    for(let i = 0; i < arr.length; i++){
+      if(num >= arr[i].car_year){
+        OlderCars.push(arr[i]);
+      }
 
+    }
+    return OlderCars
 }
 
 /**
@@ -255,8 +262,15 @@ function getOlderCars(arr, num) {
  * made by either `Audi` or `Mercedes-Benz` or `Volkswagen` or `BMW`,
  * in the same order as they appear in the original inventory.
 */
-function getGermanCars(/* code here */) {
+function getGermanCars(arr) {
   /* code here */
+  let germanCars = [];
+    for(let i = 0; i < arr.length; i++){
+      if(arr[i].car_make === "Audi" || arr[i].car_make === "Mercedes-Benz" || arr[i].car_make === "Volkswagen" || arr[i].car_make === "BMW"){
+        germanCars.push(arr[i]);
+      }     
+}
+return germanCars
 }
 
 /**
@@ -277,9 +291,9 @@ function getGermanCars(/* code here */) {
  *   return num * 2
  * }
 */
-const sum = null; // code here!
-const addFive = null; // code here!
-const argTimesTwo = null; // code here!
+const sum = (a, b) => a + b; // code here!
+const addFive = (num) => num + 5; // code here!
+const argTimesTwo = (num) => num * 2; // code here!
 
 /**
  * ### Challenge `carMaker`
@@ -294,8 +308,16 @@ const argTimesTwo = null; // code here!
  *         (1) causes the odometer in the object to be increased by the distance,
  *         (2) returns the updated value of the `odometer`.
 */
-function carMaker(/* code here */) {
+function carMaker(num) {
   /* code here */
+const car = {
+  odometer: num,
+  drive: (dist) => {
+    this.odometer + dist
+    return this.odometer
+  }
+}
+return car
 }
 
 /// ////// END OF CHALLENGE /////////
