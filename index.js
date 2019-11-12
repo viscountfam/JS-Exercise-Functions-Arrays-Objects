@@ -312,12 +312,12 @@ function carMaker(num) {
   /* code here */
 const car = {
   odometer: num,
-  drive: (dist) => {
-    this.odometer + dist
-    return this.odometer
+  drive: function(dist){
+   this.odometer += dist;
+   return this.odometer;
   }
 }
-return car
+return car;
 }
 
 /// ////// END OF CHALLENGE /////////
